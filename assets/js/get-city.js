@@ -16,7 +16,7 @@ export function getCityName(event) {
       console.log(json[0].lon);
       let lon = json[0].lon;
       let lat = json[0].lat;
-      getWeather(lat, lon);
+      getWeather(lat, lon, json[0].name);
       cityInput.value = "";
     });
 }

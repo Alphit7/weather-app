@@ -1,6 +1,6 @@
 let weatherContainer = document.querySelector(".Weather");
 
-export function getWeather(lat, lon) {
+export function getWeather(lat, lon, cityName) {
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?lat=" +
       lat +
@@ -14,6 +14,7 @@ export function getWeather(lat, lon) {
       let weatherCity = document.createElement("div");
       weatherCity.setAttribute("class", "Weather__City");
       weatherContainer.appendChild(weatherCity);
+      weatherCity.textContent = cityName + ":";
       let todayTemperature = document.createElement("span");
       weatherCity.appendChild(todayTemperature);
       todayTemperature.textContent = "Today: " + json.list[0].main.temp + "°C";
