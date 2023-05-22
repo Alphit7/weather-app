@@ -1,0 +1,14 @@
+.Weather {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.Weather__City {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.Autocomplete {
+  position: relative;
+}/*# sourceMappingURL=style.css.map */

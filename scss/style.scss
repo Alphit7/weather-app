@@ -1,0 +1,13 @@
+.Weather{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+&__City{
+display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+}
+.Autocomplete{
+    position: relative;
+}
