@@ -1,7 +1,5 @@
-import { getPicture } from "./get-picture.js";
 import { getWeather } from "./get-weather.js";
 let autocompleteItems = document.querySelector(".Autocomplete__Items");
-let picture;
 let cityInput = document.querySelector(".City__Input");
 export let names = [];
 export function getCityName(event) {
@@ -22,6 +20,7 @@ export function getCityName(event) {
       })
       .catch((error) => {
         alert("There was an error", error);
+        console.log(error);
       });
   }
 }

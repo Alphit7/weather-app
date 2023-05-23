@@ -1,5 +1,14 @@
 import { getPicture } from "./get-picture.js";
 
+const lineCanvas = document.getElementById("Weather__Canvas");
+const lineChart = new Chart(lineCanvas, {
+  type: "line",
+  data: {
+    labels: ["pisse"],
+    datasets: [{ data: [230] }],
+  },
+});
+
 let weatherContainer = document.querySelector(".Weather");
 export function getWeather(lat, lon, cityName) {
   fetch(
@@ -13,7 +22,7 @@ export function getWeather(lat, lon, cityName) {
     .then((json) => {
       let weatherCity = document.createElement("div");
       weatherCity.setAttribute("class", "Weather__City");
-      weatherCity.classList.add(cityName);
+      weatherCity.classList.add(cityName.replace(/\s/g, ""));
       weatherContainer.appendChild(weatherCity);
       weatherCity.textContent = cityName + ":";
       let todayTemperature = document.createElement("span");
@@ -39,5 +48,6 @@ export function getWeather(lat, lon, cityName) {
     })
     .catch((error) => {
       alert("There was an error", error);
+      console.log(error);
     });
 }
