@@ -36,5 +36,8 @@ export function getWeather(lat, lon, cityName) {
       fourDaysTemperature.textContent =
         "In four days: " + json.list[32].main.temp + "°C";
       getPicture(cityName, weatherCity);
+    })
+    .catch((error) => {
+      alert("There was an error", error);
     });
 }

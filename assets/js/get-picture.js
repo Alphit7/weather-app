@@ -10,6 +10,8 @@ export function getPicture(cityName, weatherCity) {
     .then((json) => {
       let picture = json.results[0].urls.full;
       weatherCity.style.backgroundImage = `url('${picture}')`;
-      console.log(weatherCity);
+    })
+    .catch((error) => {
+      console.log(error);
     });
 }

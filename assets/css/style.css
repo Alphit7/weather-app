@@ -12,16 +12,24 @@ body {
 
 .Weather {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 5px;
 }
 .Weather__City {
+  size: 24px;
   display: flex;
+  color: white;
   flex-direction: column;
   margin: 5px;
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 100px;
+  max-width: 250px;
+  min-width: 250px;
+  background-position: center;
+  text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
+  border: 1px solid black;
+  background-image: url("/assets/icones-meteo-degrades-pour-applications_79603-1767.avif");
 }
 
 .Autocomplete {
