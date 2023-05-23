@@ -1,6 +1,7 @@
+import { getPicture } from "./get-picture.js";
 import { getWeather } from "./get-weather.js";
-
-// b73486c78e9198f709d2d910b61a45a6;
+let autocompleteItems = document.querySelector(".Autocomplete__Items");
+let picture;
 let cityInput = document.querySelector(".City__Input");
 export let names = [];
 export function getCityName(event) {
@@ -12,11 +13,10 @@ export function getCityName(event) {
   )
     .then((response) => response.json())
     .then((json) => {
-      console.log(json[0].lat);
-      console.log(json[0].lon);
       let lon = json[0].lon;
       let lat = json[0].lat;
       getWeather(lat, lon, json[0].name);
       cityInput.value = "";
+      autocompleteItems.innerHTML = "";
     });
 }

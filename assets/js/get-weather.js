@@ -1,5 +1,6 @@
-let weatherContainer = document.querySelector(".Weather");
+import { getPicture } from "./get-picture.js";
 
+let weatherContainer = document.querySelector(".Weather");
 export function getWeather(lat, lon, cityName) {
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -10,9 +11,9 @@ export function getWeather(lat, lon, cityName) {
   )
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
       let weatherCity = document.createElement("div");
       weatherCity.setAttribute("class", "Weather__City");
+      weatherCity.classList.add(cityName);
       weatherContainer.appendChild(weatherCity);
       weatherCity.textContent = cityName + ":";
       let todayTemperature = document.createElement("span");
@@ -34,5 +35,6 @@ export function getWeather(lat, lon, cityName) {
       weatherCity.appendChild(fourDaysTemperature);
       fourDaysTemperature.textContent =
         "In four days: " + json.list[32].main.temp + "°C";
+      getPicture(cityName, weatherCity);
     });
 }

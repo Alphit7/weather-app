@@ -1,3 +1,13 @@
+body{
+    background-color: #324FA5;
+    color: white;
+}
+.City{
+    display: flex;
+    &__Input:focus{
+        outline:none;
+    }
+}
 .Weather{
     display: flex;
     flex-direction: column;
@@ -6,8 +16,17 @@
 display: flex;
     flex-direction: column;
     margin: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100px;
 }
 }
 .Autocomplete{
-    position: relative;
+    box-sizing: border-box;
+    max-width: 185px;
+    position: absolute;
+    background-color: #030A20;
+    padding-right: 60px;
+    padding-left: 3px;
+    border: 1px, solid black;
 }
