@@ -1,0 +1,43 @@
+body{
+    background-color: #324FA5;
+    color: white;
+}
+.City{
+    display: flex;
+    &__Input:focus{
+        outline:none;
+    }
+}
+.Weather{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5px;
+&__City{
+    size: 24px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 250px;
+    min-width: 250px;
+    background-position: center;
+    text-shadow:-0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
+    border:1px solid black;
+    background-image: url("/assets/icones-meteo-degrades-pour-applications_79603-1767.avif");
+}
+}
+// #Weather__Canvas{
+//     background-color: darkblue;
+// }
+.Autocomplete{
+    box-sizing: border-box;
+    max-width: 185px;
+    position: absolute;
+    background-color: #030A20;
+    padding-right: 60px;
+    padding-left: 3px;
+    border: 1px, solid black;
+}
