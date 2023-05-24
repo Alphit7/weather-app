@@ -6,7 +6,7 @@ export function getCityName(event) {
   let cityName = cityInput.value;
   if (cityName !== "") {
     fetch(
-      "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      "https://api.openweathermap.org/geo/1.0/direct?q=" +
         cityName +
         "&limit=5&appid=b73486c78e9198f709d2d910b61a45a6"
     )
