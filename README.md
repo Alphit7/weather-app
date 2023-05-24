@@ -32,5 +32,5 @@ For the pictures:
 
 
 ## Github Page
-
+https://alphit7.github.io/weather-app/
 
