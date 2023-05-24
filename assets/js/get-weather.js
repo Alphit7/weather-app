@@ -1,11 +1,16 @@
 import { getPicture } from "./get-picture.js";
-
 const lineCanvas = document.getElementById("Weather__Canvas");
 const lineChart = new Chart(lineCanvas, {
   type: "line",
   data: {
-    labels: ["pisse"],
-    datasets: [{ data: [230] }],
+    labels: [
+      "Today",
+      "Tomorrow",
+      "In two days",
+      "In three days",
+      "In Four Days",
+    ],
+    datasets: [],
   },
 });
 
@@ -45,6 +50,18 @@ export function getWeather(lat, lon, cityName) {
       fourDaysTemperature.textContent =
         "In four days: " + json.list[32].main.temp + "°C";
       getPicture(cityName, weatherCity);
+      let data = {
+        label: `${cityName}`,
+        data: [
+          json.list[0].main.temp,
+          json.list[8].main.temp,
+          json.list[16].main.temp,
+          json.list[24].main.temp,
+          json.list[32].main.temp,
+        ],
+      };
+      lineChart.data.datasets.push(data);
+      console.log(lineChart.data.datasets);
     })
     .catch((error) => {
       alert("There was an error", error);
